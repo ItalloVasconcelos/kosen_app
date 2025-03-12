@@ -1,46 +1,41 @@
 
-import { ArrowRight } from "lucide-react";
+import React from "react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
   const { t } = useTranslation();
-  
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* Content Column */}
-        <div className={styles.contentCol}>
-          <div className={styles.logoBox}>
-            KOSEN ENERGY
+        <div className={styles.content}>
+          <div className={styles.logo}>
+            <span className={styles.logoText}>kõsen</span>
+            <span className={styles.logoEnergy}>energy</span>
           </div>
           
-          <h1 className={styles.description}>
+          <p className={styles.description}>
             {t.hero.description}
-          </h1>
+          </p>
           
           <div className={styles.buttonContainer}>
-            <button className={styles.primaryButton}>
-              <span>{t.hero.buyButton}</span>
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
+            <a href="#contact" className={styles.primaryButton}>
+              {t.hero.buyButton}
+            </a>
             
-            <button className={styles.secondaryButton}>
+            <a href="#resources" className={styles.secondaryButton}>
               {t.hero.tryButton}
-            </button>
+            </a>
           </div>
         </div>
         
-        {/* Image Column */}
-        <div className={styles.imageCol}>
-          <div className={styles.imageContainer}>
-            <div className={styles.overlay}></div>
-            <div className={styles.platformBox}>
-              <div className={styles.platformContent}>
-                Plataforma Kosen Energy
-              </div>
-            </div>
-          </div>
+        <div className={styles.imageContainer}>
+          <img 
+            src="/lovable-uploads/b2a53328-dc84-4ec0-a0b7-be7e7b068169.png" 
+            alt="Kosen Energy Platform" 
+            className={styles.heroImage}
+          />
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Benefits from "@/components/Benefits";
@@ -8,32 +8,6 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  useEffect(() => {
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => {
-      if (section instanceof HTMLElement) {
-        section.style.opacity = "0";
-        section.style.transform = "translateY(20px)";
-        section.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-      }
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.target instanceof HTMLElement) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
-
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", fontFamily: "Inter, sans-serif" }}>
       <Navbar />

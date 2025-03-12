@@ -1,6 +1,6 @@
 
 .section {
-  padding: 4rem 2rem;
+  padding: 2rem;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -8,69 +8,63 @@
 .heading {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
 }
 
 .description {
-  color: var(--kosen-muted);
-  max-width: 48rem;
+  color: #4B5563;
+  max-width: 700px;
   margin-bottom: 3rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .benefitsContainer {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .card {
   padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease;
-}
-
-.cardVisible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.cardHidden {
-  opacity: 0;
-  transform: translateY(8px);
+  border-radius: 0.25rem;
+  height: 100%;
 }
 
 .cardPrimary {
-  background-color: var(--kosen-primary);
+  background-color: #0093CE;
 }
 
 .cardSecondary {
-  background-color: var(--kosen-secondary);
+  background-color: #BE4BDB;
 }
 
 .cardTertiary {
-  background-color: var(--kosen-tertiary);
+  background-color: #2A4B63;
 }
 
 .cardTitle {
   color: white;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .cardDescription {
   color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
 }
 
 @media (max-width: 1024px) {
   .benefitsContainer {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
   .benefitsContainer {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 }
