@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
+import styles from "./ContactSection.module.css";
 
 const ContactSection = () => {
   const { t } = useTranslation();
@@ -34,48 +35,48 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-16 px-8 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section className={styles.section}>
+      <div className={styles.container}>
         {/* Left Column - Next Steps */}
-        <div className="flex flex-col justify-center animate-fade-in-right">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-8">
+        <div className={styles.leftColumn}>
+          <h2 className={styles.heading}>
             {t.nextSteps.title}
           </h2>
           
-          <p className="text-kosen-muted mb-8 text-lg leading-relaxed">
+          <p className={styles.description}>
             {t.nextSteps.description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-kosen-primary text-white px-6 py-3 rounded-md hover:bg-kosen-primary/90 transition-all duration-300 flex items-center justify-center group">
+          <div className={styles.buttonContainer}>
+            <button className={styles.primaryButton}>
               <span>{t.nextSteps.buyButton}</span>
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-4 w-4" />
             </button>
             
-            <button className="border-2 border-kosen-primary text-kosen-primary px-6 py-3 rounded-md hover:bg-kosen-primary/5 transition-all duration-300">
+            <button className={styles.secondaryButton}>
               {t.nextSteps.tryButton}
             </button>
           </div>
         </div>
         
         {/* Right Column - Contact Form */}
-        <div className="bg-white p-8 rounded-lg shadow-lg animate-fade-in-left">
-          <h2 className="text-2xl font-semibold mb-6">
+        <div className={styles.rightColumn}>
+          <h2 className={styles.formHeading}>
             {t.contact.title}
           </h2>
           
           {isSubmitted ? (
-            <div className="flex flex-col items-center justify-center py-8">
-              <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
-              <h3 className="text-xl font-medium mb-2">{t.contact.form.success}</h3>
-              <p className="text-kosen-muted text-center">
+            <div className={styles.successContainer}>
+              <CheckCircle className={styles.successIcon} />
+              <h3 className={styles.successTitle}>{t.contact.form.success}</h3>
+              <p className={styles.successMessage}>
                 {t.contact.form.successMessage}
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="block text-sm font-medium text-kosen-dark">
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <div className={styles.formGroup}>
+                <label htmlFor="name" className={styles.formLabel}>
                   {t.contact.form.name}
                 </label>
                 <input
@@ -86,12 +87,12 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder={t.contact.form.namePlaceholder}
                   required
-                  className="w-full border-2 border-kosen-border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-kosen-primary/30 focus:border-kosen-primary transition-all bg-white"
+                  className={styles.formInput}
                 />
               </div>
               
-              <div className="space-y-2">
-                <label htmlFor="email" className="block text-sm font-medium text-kosen-dark">
+              <div className={styles.formGroup}>
+                <label htmlFor="email" className={styles.formLabel}>
                   {t.contact.form.email}
                 </label>
                 <input
@@ -102,12 +103,12 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder={t.contact.form.emailPlaceholder}
                   required
-                  className="w-full border-2 border-kosen-border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-kosen-primary/30 focus:border-kosen-primary transition-all bg-white"
+                  className={styles.formInput}
                 />
               </div>
               
-              <div className="space-y-2">
-                <label htmlFor="phone" className="block text-sm font-medium text-kosen-dark">
+              <div className={styles.formGroup}>
+                <label htmlFor="phone" className={styles.formLabel}>
                   {t.contact.form.phone}
                 </label>
                 <input
@@ -117,12 +118,12 @@ const ContactSection = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder={t.contact.form.phonePlaceholder}
-                  className="w-full border-2 border-kosen-border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-kosen-primary/30 focus:border-kosen-primary transition-all bg-white"
+                  className={styles.formInput}
                 />
               </div>
               
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-sm font-medium text-kosen-dark">
+              <div className={styles.formGroup}>
+                <label htmlFor="message" className={styles.formLabel}>
                   {t.contact.form.message}
                 </label>
                 <textarea
@@ -133,18 +134,14 @@ const ContactSection = () => {
                   placeholder={t.contact.form.messagePlaceholder}
                   rows={4}
                   required
-                  className="w-full border-2 border-kosen-border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-kosen-primary/30 focus:border-kosen-primary transition-all resize-none bg-white"
+                  className={styles.formTextarea}
                 />
               </div>
               
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-kosen-primary text-white px-6 py-3 rounded-md transition-all duration-300 ${
-                  isSubmitting 
-                    ? "opacity-70 cursor-not-allowed" 
-                    : "hover:bg-kosen-primary/90 transform hover:-translate-y-1"
-                }`}
+                className={styles.formButton}
               >
                 {isSubmitting ? t.contact.form.sending : t.contact.form.submitButton}
               </button>

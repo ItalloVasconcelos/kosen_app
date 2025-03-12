@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -34,7 +35,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col font-inter">
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", fontFamily: "Inter, sans-serif" }}>
       <Navbar />
       <Hero />
       <Benefits />

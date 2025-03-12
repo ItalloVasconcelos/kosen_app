@@ -1,3 +1,4 @@
+
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -12,11 +13,22 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "#f3f4f6"
+    }}>
+      <div style={{ textAlign: "center" }}>
+        <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "1rem" }}>404</h1>
+        <p style={{ fontSize: "1.25rem", color: "#6b7280", marginBottom: "1rem" }}>
+          Oops! Page not found
+        </p>
+        <a
+          href="/"
+          style={{ color: "#4318D1", textDecoration: "underline" }}
+        >
           Return to Home
         </a>
       </div>

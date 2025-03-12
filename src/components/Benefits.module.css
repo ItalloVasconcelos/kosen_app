@@ -1,0 +1,76 @@
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.description {
+  color: var(--kosen-muted);
+  max-width: 48rem;
+  margin-bottom: 3rem;
+  font-size: 1.125rem;
+}
+
+.benefitsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardHidden {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.cardPrimary {
+  background-color: var(--kosen-primary);
+}
+
+.cardSecondary {
+  background-color: var(--kosen-secondary);
+}
+
+.cardTertiary {
+  background-color: var(--kosen-tertiary);
+}
+
+.cardTitle {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 1024px) {
+  .benefitsContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .benefitsContainer {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

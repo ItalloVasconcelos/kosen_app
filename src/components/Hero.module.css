@@ -1,0 +1,147 @@
+
+.section {
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 3rem;
+}
+
+.contentCol {
+  flex: 1;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.logoBox {
+  height: 2.5rem;
+  width: 12rem;
+  background-color: var(--kosen-primary);
+  border-radius: 0.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: var(--kosen-dark);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.primaryButton {
+  background-color: var(--kosen-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background-color: rgba(67, 24, 209, 0.9);
+  transform: translateY(-4px);
+}
+
+.secondaryButton {
+  border: 1px solid var(--kosen-primary);
+  color: var(--kosen-primary);
+  background-color: transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(67, 24, 209, 0.05);
+  transform: translateY(-4px);
+}
+
+.imageCol {
+  flex: 1;
+  width: 100%;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  background-color: rgba(67, 24, 209, 0.2);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(67, 24, 209, 0.2);
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.platformBox {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platformContent {
+  height: 240px;
+  width: 400px;
+  background-color: var(--kosen-primary);
+  border-radius: 0.375rem;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.platformContent:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buttonContainer {
+    flex-direction: column;
+  }
+  
+  .section {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+}

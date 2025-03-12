@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
 import { Language } from "@/lib/i18n";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import styles from "./LanguageSelector.module.css";
 
 const LanguageSelector = () => {
   const { language, changeLanguage } = useTranslation();
@@ -20,10 +21,10 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div className="relative">
+    <div className={styles.container}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 text-kosen-dark hover:text-kosen-primary transition-ease font-medium"
+        className={styles.button}
       >
         {languages[language]}
         {isOpen ? (
@@ -34,13 +35,13 @@ const LanguageSelector = () => {
       </button>
       
       {isOpen && (
-        <div className="absolute top-full mt-1 right-0 bg-white shadow-md rounded-md py-1 z-50">
+        <div className={styles.dropdown}>
           {Object.entries(languages).map(([langCode, langName]) => (
             <button
               key={langCode}
               onClick={() => handleLanguageChange(langCode as Language)}
-              className={`block w-full text-left px-4 py-2 hover:bg-kosen-primary/5 ${
-                language === langCode ? "text-kosen-primary font-medium" : "text-kosen-dark"
+              className={`${styles.languageOption} ${
+                language === langCode ? styles.selected : styles.normal
               }`}
             >
               {langName}

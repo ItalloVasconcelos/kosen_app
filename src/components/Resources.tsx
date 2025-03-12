@@ -1,6 +1,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
+import styles from "./Resources.module.css";
 
 const ResourceCard = ({ 
   title, 
@@ -43,27 +44,26 @@ const ResourceCard = ({
   return (
     <div
       ref={cardRef}
-      className={`border border-kosen-border p-6 rounded-lg hover:border-kosen-primary/30 transition-all duration-300 hover:shadow-lg hover-lift ${
+      className={`${styles.card} ${
         isVisible 
-          ? "opacity-100 translate-y-0" 
-          : "opacity-0 translate-y-8"
+          ? styles.cardVisible
+          : styles.cardHidden
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <h3 className="text-kosen-dark font-semibold text-lg mb-2">{title}</h3>
-      <p className="text-kosen-muted mb-4">{description}</p>
+      <h3 className={styles.cardTitle}>{title}</h3>
+      <p className={styles.cardDescription}>{description}</p>
       <a 
         href={link} 
-        className="text-kosen-primary flex items-center group"
+        className={styles.cardLink}
       >
-        <span className="transition-all duration-300 group-hover:mr-2">
+        <span style={{ marginRight: isHovered ? '0.5rem' : '0' }}>
           Saiba mais
         </span>
         <ArrowRight 
-          className={`h-4 w-4 transform transition-all duration-300 ${
-            isHovered ? "translate-x-1" : ""
-          }`} 
+          className={styles.arrowIcon}
+          style={{ transform: isHovered ? 'translateX(4px)' : 'translateX(0)' }}
         />
       </a>
     </div>
@@ -72,12 +72,12 @@ const ResourceCard = ({
 
 const Resources = () => {
   return (
-    <section id="recursos" className="py-16 px-8 max-w-7xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-semibold mb-8">
+    <section id="recursos" className={styles.section}>
+      <h2 className={styles.heading}>
         Recursos
       </h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className={styles.resourcesContainer}>
         <ResourceCard
           title="Monitoramento em Tempo Real"
           description="Acompanhe o consumo de energia da sua empresa ou residência em tempo real através do nosso aplicativo."

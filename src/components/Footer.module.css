@@ -1,0 +1,142 @@
+
+.footer {
+  background-color: var(--kosen-dark);
+  color: white;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.logoColumn {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.logoBox {
+  height: 2.5rem;
+  width: 8rem;
+  background-color: white;
+  border-radius: 0.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kosen-primary);
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.companyName {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.contactIcon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.125rem;
+}
+
+.contactLink {
+  color: var(--kosen-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: white;
+}
+
+.socialSection {
+  margin-top: 2rem;
+}
+
+.socialTitle {
+  margin-bottom: 1rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialLink {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background-color: var(--kosen-primary);
+  transform: translateY(-4px);
+}
+
+.socialIcon {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.bottomSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+  padding-top: 2rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.legalLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.legalLink {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.legalLink:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+  }
+  
+  .bottomSection {
+    flex-direction: column;
+    align-items: center;
+  }
+}

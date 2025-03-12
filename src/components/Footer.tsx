@@ -10,67 +10,68 @@ import {
   Phone 
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   const { t } = useTranslation();
   
   return (
-    <footer id="contato" className="bg-kosen-dark text-white">
-      <div className="max-w-7xl mx-auto px-8 py-16">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+    <footer id="contato" className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.topSection}>
           {/* Logo Column */}
-          <div className="animate-fade-in-right">
-            <div className="h-10 w-32 bg-white rounded-sm flex items-center justify-center text-kosen-primary font-bold mb-8">
+          <div className={styles.logoColumn}>
+            <div className={styles.logoBox}>
               KOSEN
             </div>
           </div>
           
           {/* Contact Info Column */}
-          <div className="space-y-3 animate-fade-in">
-            <h3 className="font-semibold text-lg mb-4">{t.footer.companyName}</h3>
+          <div className={styles.infoColumn}>
+            <h3 className={styles.companyName}>{t.footer.companyName}</h3>
             
-            <div className="flex items-start gap-2">
-              <MapPin className="h-5 w-5 text-white/70 mt-0.5" />
+            <div className={styles.contactItem}>
+              <MapPin className={styles.contactIcon} />
               <span>{t.footer.address}</span>
             </div>
             
             <div>{t.footer.zipCode}</div>
             
-            <div className="flex items-center gap-2">
-              <Mail className="h-5 w-5 text-white/70" />
-              <a href="mailto:contato@kosenenergy.com" className="text-kosen-secondary hover:text-white transition-colors">
+            <div className={styles.contactItem}>
+              <Mail className={styles.contactIcon} />
+              <a href="mailto:contato@kosenenergy.com" className={styles.contactLink}>
                 {t.footer.email}
               </a>
             </div>
             
-            <div className="flex items-center gap-2">
-              <Phone className="h-5 w-5 text-white/70" />
-              <a href="tel:+55119999999" className="text-kosen-secondary hover:text-white transition-colors">
+            <div className={styles.contactItem}>
+              <Phone className={styles.contactIcon} />
+              <a href="tel:+55119999999" className={styles.contactLink}>
                 {t.footer.phone}
               </a>
             </div>
             
-            <div className="flex items-center gap-2">
-              <Mail className="h-5 w-5 text-white/70" />
-              <a href="#suporte" className="text-kosen-secondary hover:text-white transition-colors">
+            <div className={styles.contactItem}>
+              <Mail className={styles.contactIcon} />
+              <a href="#suporte" className={styles.contactLink}>
                 {t.footer.support}
               </a>
             </div>
             
-            <div className="mt-8">
-              <p>{t.footer.followUs}</p>
-              <div className="flex gap-4 mt-4">
+            <div className={styles.socialSection}>
+              <p className={styles.socialTitle}>{t.footer.followUs}</p>
+              <div className={styles.socialIcons}>
                 {[
-                  { icon: <Linkedin className="h-5 w-5" />, href: "#linkedin" },
-                  { icon: <Instagram className="h-5 w-5" />, href: "#instagram" },
-                  { icon: <Facebook className="h-5 w-5" />, href: "#facebook" },
-                  { icon: <Youtube className="h-5 w-5" />, href: "#youtube" },
-                  { icon: <Twitter className="h-5 w-5" />, href: "#twitter" },
+                  { icon: <Linkedin className={styles.socialIcon} />, href: "#linkedin" },
+                  { icon: <Instagram className={styles.socialIcon} />, href: "#instagram" },
+                  { icon: <Facebook className={styles.socialIcon} />, href: "#facebook" },
+                  { icon: <Youtube className={styles.socialIcon} />, href: "#youtube" },
+                  { icon: <Twitter className={styles.socialIcon} />, href: "#twitter" },
                 ].map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
-                    className="bg-white/10 p-2 rounded-full hover:bg-kosen-primary transition-all hover-lift"
+                    className={styles.socialLink}
                     aria-label={`Visit our ${social.href.replace("#", "")} page`}
                   >
                     {social.icon}
@@ -81,11 +82,11 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/10 mt-12 pt-8 text-white/60 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className={styles.bottomSection}>
           <div>{t.footer.copyright}</div>
-          <div className="flex gap-6">
-            <a href="#termos" className="hover:text-white transition-colors">{t.footer.termsOfUse}</a>
-            <a href="#privacidade" className="hover:text-white transition-colors">{t.footer.privacyPolicy}</a>
+          <div className={styles.legalLinks}>
+            <a href="#termos" className={styles.legalLink}>{t.footer.termsOfUse}</a>
+            <a href="#privacidade" className={styles.legalLink}>{t.footer.privacyPolicy}</a>
           </div>
         </div>
       </div>
