@@ -1,8 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useTranslation } from "@/lib/i18n/TranslationContext";
+import LanguageSelector from "./LanguageSelector";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -20,6 +23,13 @@ const Navbar = () => {
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const menuItems = [
+    { text: t.navbar.about, href: "#sobre-nos" },
+    { text: t.navbar.benefits, href: "#beneficios" },
+    { text: t.navbar.resources, href: "#recursos" },
+    { text: t.navbar.contact, href: "#contato" }
+  ];
 
   return (
     <header 
@@ -39,15 +49,16 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          {["Sobre nós", "Benefícios", "Recursos", "Contato"].map((item) => (
+          {menuItems.map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+              key={item.text}
+              href={item.href}
               className="text-kosen-dark hover:text-kosen-primary transition-ease font-medium"
             >
-              {item}
+              {item.text}
             </a>
           ))}
+          <LanguageSelector />
         </nav>
 
         {/* Mobile Menu Button */}
@@ -64,16 +75,19 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md animate-fade-in">
           <div className="flex flex-col p-4">
-            {["Sobre nós", "Benefícios", "Recursos", "Contato"].map((item) => (
+            {menuItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                key={item.text}
+                href={item.href}
                 className="py-3 text-kosen-dark hover:text-kosen-primary transition-ease font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {item}
+                {item.text}
               </a>
             ))}
+            <div className="py-3">
+              <LanguageSelector />
+            </div>
           </div>
         </div>
       )}

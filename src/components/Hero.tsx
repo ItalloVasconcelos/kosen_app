@@ -1,7 +1,10 @@
 
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "@/lib/i18n/TranslationContext";
 
 const Hero = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="pt-28 pb-16 md:py-20 px-8 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-16">
@@ -12,17 +15,17 @@ const Hero = () => {
           </div>
           
           <h1 className="text-xl md:text-2xl leading-relaxed text-kosen-dark mb-6">
-            Uma breve descrição do que é a Kosen Energy. Soluções energéticas sustentáveis para empresas e residências.
+            {t.hero.description}
           </h1>
           
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="bg-kosen-primary text-white px-6 py-3 rounded hover-lift hover:bg-kosen-primary/90 transition-ease flex items-center justify-center">
-              <span>Compre o App da Kosen Energy</span>
+              <span>{t.hero.buyButton}</span>
               <ArrowRight className="ml-2 h-4 w-4" />
             </button>
             
             <button className="border border-kosen-primary text-kosen-primary px-6 py-3 rounded hover-lift hover:bg-kosen-primary/5 transition-ease">
-              Teste o App da Kosen Energy
+              {t.hero.tryButton}
             </button>
           </div>
         </div>

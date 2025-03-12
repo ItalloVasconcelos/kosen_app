@@ -9,8 +9,11 @@ import {
   Mail, 
   Phone 
 } from "lucide-react";
+import { useTranslation } from "@/lib/i18n/TranslationContext";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer id="contato" className="bg-kosen-dark text-white">
       <div className="max-w-7xl mx-auto px-8 py-16">
@@ -24,38 +27,38 @@ const Footer = () => {
           
           {/* Contact Info Column */}
           <div className="space-y-3 animate-fade-in">
-            <h3 className="font-semibold text-lg mb-4">Kosen Energy</h3>
+            <h3 className="font-semibold text-lg mb-4">{t.footer.companyName}</h3>
             
             <div className="flex items-start gap-2">
               <MapPin className="h-5 w-5 text-white/70 mt-0.5" />
-              <span>Rua Xxxxx XXX, Bloco X 52-23 - São Paulo - SP</span>
+              <span>{t.footer.address}</span>
             </div>
             
-            <div>CEP XXXXX-XXX</div>
+            <div>{t.footer.zipCode}</div>
             
             <div className="flex items-center gap-2">
               <Mail className="h-5 w-5 text-white/70" />
               <a href="mailto:contato@kosenenergy.com" className="text-kosen-secondary hover:text-white transition-colors">
-                contato@kosenenergy.com
+                {t.footer.email}
               </a>
             </div>
             
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-white/70" />
               <a href="tel:+55119999999" className="text-kosen-secondary hover:text-white transition-colors">
-                +55 (11) 9999-9999
+                {t.footer.phone}
               </a>
             </div>
             
             <div className="flex items-center gap-2">
               <Mail className="h-5 w-5 text-white/70" />
               <a href="#suporte" className="text-kosen-secondary hover:text-white transition-colors">
-                Suporte técnico
+                {t.footer.support}
               </a>
             </div>
             
             <div className="mt-8">
-              <p>Siga nossas redes sociais!</p>
+              <p>{t.footer.followUs}</p>
               <div className="flex gap-4 mt-4">
                 {[
                   { icon: <Linkedin className="h-5 w-5" />, href: "#linkedin" },
@@ -79,10 +82,10 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 mt-12 pt-8 text-white/60 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
-          <div>© 2023 Kosen Energy. Todos os direitos reservados.</div>
+          <div>{t.footer.copyright}</div>
           <div className="flex gap-6">
-            <a href="#termos" className="hover:text-white transition-colors">Termos de Uso</a>
-            <a href="#privacidade" className="hover:text-white transition-colors">Política de Privacidade</a>
+            <a href="#termos" className="hover:text-white transition-colors">{t.footer.termsOfUse}</a>
+            <a href="#privacidade" className="hover:text-white transition-colors">{t.footer.privacyPolicy}</a>
           </div>
         </div>
       </div>
