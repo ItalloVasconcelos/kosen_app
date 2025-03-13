@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap');
 
 :root {
   --kosen-primary: #4318D1;
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   background-color: var(--kosen-light);
   color: var(--kosen-dark);
 }

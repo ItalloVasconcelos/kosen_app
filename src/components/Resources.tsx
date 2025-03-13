@@ -27,9 +27,7 @@ const Resources = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="resources" className={styles.section}>
-      <div className={styles.divider}></div>
-      
+    <section className={styles.section}>      
       <h2 className={styles.heading}>
         Recursos
       </h2>
