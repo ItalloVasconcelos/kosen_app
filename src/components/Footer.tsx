@@ -26,6 +26,9 @@ const Footer = () => {
             </div>
           </div>
           
+          {/* Vertical Divider */}
+          <div className={styles.verticalDivider}></div>
+          
           {/* Contact Info Column */}
           <div className={styles.infoColumn}>
             <h3 className={styles.companyName}>{t.footer.companyName}</h3>

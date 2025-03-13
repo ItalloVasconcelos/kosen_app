@@ -60,6 +60,13 @@
   text-decoration: underline;
 }
 
+.divider {
+  height: 1px;
+  background-color: #333;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 1024px) {
   .resourcesContainer {
     grid-template-columns: repeat(2, 1fr);

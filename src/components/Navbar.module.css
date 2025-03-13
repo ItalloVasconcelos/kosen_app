@@ -24,6 +24,12 @@
   padding: 1rem 2rem;
 }
 
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -94,6 +100,13 @@
   color: var(--kosen-primary);
 }
 
+.divider {
+  height: 1px;
+  background-color: #E5E7EB;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
 @media (max-width: 768px) {
   .nav {
     display: none;
@@ -101,5 +114,10 @@
   
   .menuButton {
     display: block;
+  }
+  
+  .leftSection {
+    width: 100%;
+    justify-content: space-between;
   }
 }

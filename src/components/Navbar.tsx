@@ -35,39 +35,43 @@ const Navbar = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
       <div className={styles.container}>
-        {/* Logo */}
-        <div className={styles.logo}>
-          <div className={styles.logoBox}>
-            KOSEN
+        <div className={styles.leftSection}>
+          {/* Logo */}
+          <div className={styles.logo}>
+            <div className={styles.logoBox}>
+              KOSEN
+            </div>
           </div>
+
+          {/* Desktop Navigation */}
+          <nav className={styles.nav}>
+            {menuItems.map((item) => (
+              <a
+                key={item.text}
+                href={item.href}
+                className={styles.navItem}
+              >
+                {item.text}
+              </a>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className={styles.menuButton} 
+            onClick={toggleMenu} 
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className={styles.nav}>
-          {menuItems.map((item) => (
-            <a
-              key={item.text}
-              href={item.href}
-              className={styles.navItem}
-            >
-              {item.text}
-            </a>
-          ))}
-          <LanguageSelector />
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className={styles.menuButton} 
-          onClick={toggleMenu} 
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
+        {/* Language Selector */}
+        <LanguageSelector />
       </div>
 
       {/* Mobile Menu */}
@@ -84,6 +88,7 @@ const Navbar = () => {
                 {item.text}
               </a>
             ))}
+            <div className={styles.divider}></div>
             <div style={{ padding: "0.75rem 0" }}>
               <LanguageSelector />
             </div>
