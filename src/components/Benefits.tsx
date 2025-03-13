@@ -33,7 +33,7 @@ const Benefits = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="benefícios" className={styles.section}>
+    <section id="benefits" className={styles.section}>
       <h2 className={styles.heading}>
         Por que Kosen Energy?
       </h2>

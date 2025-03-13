@@ -11,7 +11,9 @@ const Index = () => {
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", fontFamily: "Inter, sans-serif" }}>
       <Navbar />
-      <Hero />
+      <div id="about">
+        <Hero />
+      </div>
       <Benefits />
       <Resources />
       <ContactSection />

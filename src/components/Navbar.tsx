@@ -26,10 +26,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const menuItems = [
-    { text: t.navbar.about, href: "#sobre-nos" },
-    { text: t.navbar.benefits, href: "#beneficios" },
-    { text: t.navbar.resources, href: "#recursos" },
-    { text: t.navbar.contact, href: "#contato" }
+    { text: t.navbar.about, href: "#about" },
+    { text: t.navbar.benefits, href: "#benefits" },
+    { text: t.navbar.resources, href: "#resources" },
+    { text: t.navbar.contact, href: "#contact" }
   ];
 
   return (
