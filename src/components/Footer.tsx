@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
 import styles from "./Footer.module.css";
+import React from "react";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -22,13 +23,18 @@ const Footer = () => {
           {/* Logo Column */}
           <div className={styles.logoColumn}>
             <div className={styles.logoBox}>
-              KOSEN
+                <img
+                    width={"500"}
+                    src="/images/logo_kosen_white.svg"
+                    alt="Kosen Energy Platform"
+                    className={styles.heroImage}
+                />
             </div>
           </div>
-          
+
           {/* Vertical Divider */}
           <div className={styles.verticalDivider}></div>
-          
+
           {/* Contact Info Column */}
           <div className={styles.infoColumn}>
             <h3 className={styles.companyName}>{t.footer.companyName}</h3>

@@ -37,8 +37,7 @@
 
 .logoBox {
   height: 2.5rem;
-  width: 8rem;
-  background-color: var(--kosen-primary);
+  width: 9rem;
   border-radius: 0.125rem;
   display: flex;
   align-items: center;

@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
 import LanguageSelector from "./LanguageSelector";
@@ -39,17 +39,23 @@ const Navbar = () => {
           {/* Logo */}
           <div className={styles.logo}>
             <div className={styles.logoBox}>
-              KOSEN
+                <img
+                    src="/images/logo_kosen.svg"
+                    width={"150"}
+                    alt="Kosen Energy Platform"
+                    className={styles.heroImage}
+                />
+
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className={styles.nav}>
             {menuItems.map((item) => (
-              <a
-                key={item.text}
-                href={item.href}
-                className={styles.navItem}
+                <a
+                    key={item.text}
+                    href={item.href}
+                    className={styles.navItem}
               >
                 {item.text}
               </a>

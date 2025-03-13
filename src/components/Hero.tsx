@@ -11,14 +11,17 @@ const Hero = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.logo}>
-            <span className={styles.logoText}>kõsen</span>
-            <span className={styles.logoEnergy}>energy</span>
+              <img
+                  src="/images/logo_kosen_energy.svg"
+                  alt="Kosen Energy Logo"
+                  className={styles.heroLogo}
+              />
           </div>
-          
+
           <p className={styles.description}>
             {t.hero.description}
           </p>
-          
+
           <div className={styles.buttonContainer}>
             <a href="#contact" className={styles.primaryButton}>
               {t.hero.buyButton}
