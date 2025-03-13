@@ -33,13 +33,13 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className={styles.imageContainer}>
-          <img 
-            src="/lovable-uploads/b2a53328-dc84-4ec0-a0b7-be7e7b068169.png" 
-            alt="Kosen Energy Platform" 
-            className={styles.heroImage}
-          />
-        </div>
+        {/*<div className={styles.imageContainer}>*/}
+        {/*  <img */}
+        {/*    src="/lovable-uploads/b2a53328-dc84-4ec0-a0b7-be7e7b068169.png" */}
+        {/*    alt="Kosen Energy Platform" */}
+        {/*    className={styles.heroImage}*/}
+        {/*  />*/}
+        {/*</div>*/}
       </div>
     </section>
   );

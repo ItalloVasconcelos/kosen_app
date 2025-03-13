@@ -35,15 +35,7 @@ const Benefits = () => {
   return (
     <section id="benefits" className={styles.section}>
       <h2 className={styles.heading}>
-        Por que Kosen Energy?
-      </h2>
-      
-      <p className={styles.description}>
-        Texto descrevendo o por que da usar o app da Kosen... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non elit non lacus consectetur egestas eget eu mauris. Suspendisse potenti. Etiam eget accumsan tellus, sed eleifend augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
-      </p>
-      
-      <h2 className={styles.heading}>
-        Benefícios do Kosen Energy
+          {t.benefits.title}
       </h2>
       
       <div className={styles.benefitsContainer}>
