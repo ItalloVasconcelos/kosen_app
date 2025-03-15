@@ -3,10 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
 import LanguageSelector from "./LanguageSelector";
+import { useTheme } from "./ThemeProvider";
+import ThemeToggle from "./ThemeToggle";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -40,12 +43,11 @@ const Navbar = () => {
           <div className={styles.logo}>
             <div className={styles.logoBox}>
                 <img
-                    src="/images/logo_kosen.svg"
+                    src={theme === "dark" ? "/images/logo_kosen_white.svg" : "/images/logo_kosen.svg"}
                     width={"150"}
                     alt="Kosen Energy Platform"
                     className={styles.heroImage}
                 />
-
             </div>
           </div>
 
@@ -76,8 +78,11 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Language Selector */}
-        <LanguageSelector />
+        {/* Right section with Language and Theme selectors */}
+        <div className={styles.rightSection}>
+          <LanguageSelector />
+          <ThemeToggle />
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -95,8 +100,9 @@ const Navbar = () => {
               </a>
             ))}
             <div className={styles.divider}></div>
-            <div style={{ padding: "0.75rem 0" }}>
+            <div style={{ padding: "0.75rem 0", display: "flex", gap: "1rem", alignItems: "center" }}>
               <LanguageSelector />
+              <ThemeToggle />
             </div>
           </div>
         </div>

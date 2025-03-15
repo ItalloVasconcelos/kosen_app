@@ -19,10 +19,3 @@
   margin: 0 auto;
   transition: background-color 0.3s ease;
 }
-
-.themeToggleContainer {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1000;
-}

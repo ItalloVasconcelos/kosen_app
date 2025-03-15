@@ -10,11 +10,13 @@ import {
   Phone 
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
+import { useTheme } from "./ThemeProvider";
 import styles from "./Footer.module.css";
 import React from "react";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   
   return (
     <footer id="contato" className={styles.footer}>
@@ -25,7 +27,7 @@ const Footer = () => {
             <div className={styles.logoBox}>
                 <img
                     width={"500"}
-                    src="/images/logo_kosen_white.svg"
+                    src={theme === "dark" ? "/images/logo_kosen_white.svg" : "/images/logo_kosen.svg"}
                     alt="Kosen Energy Platform"
                     className={styles.heroImage}
                 />

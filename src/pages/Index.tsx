@@ -6,17 +6,12 @@ import Benefits from "@/components/Benefits";
 import Resources from "@/components/Resources";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
 import styles from "./Index.module.css";
 import AboutUs from "@/components/AboutUs";
 
 const Index = () => {
   return (
       <div className={styles.container}>
-          <div className={styles.themeToggleContainer}>
-              <ThemeToggle />
-          </div>
-          
           <Navbar/>
 
           <section id="about" className={styles.section}>

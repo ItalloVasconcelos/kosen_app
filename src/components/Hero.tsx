@@ -2,10 +2,12 @@
 import React from "react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
 import { ArrowRight } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
   const { t } = useTranslation();
+  const { theme } = useTheme();
 
   return (
     <section className={styles.section}>
@@ -13,7 +15,7 @@ const Hero = () => {
         <div className={styles.content}>
           <div className={styles.logo}>
               <img
-                  src="/images/logo_kosen_energy.svg"
+                  src={theme === "dark" ? "/images/logo_kosen_energy_dark.svg" : "/images/logo_kosen_energy.svg"}
                   alt="Kosen Energy Logo"
                   className={styles.heroLogo}
               />
@@ -36,13 +38,13 @@ const Hero = () => {
           </div>
         </div>
         
-        {/*<div className={styles.imageContainer}>*/}
-        {/*  <img */}
-        {/*    src="/lovable-uploads/b2a53328-dc84-4ec0-a0b7-be7e7b068169.png" */}
-        {/*    alt="Kosen Energy Platform" */}
-        {/*    className={styles.heroImage}*/}
-        {/*  />*/}
-        {/*</div>*/}
+        <div className={styles.imageContainer}>
+          <img 
+            src="/images/energy-illustration.png" 
+            alt="Energy Illustration" 
+            className={styles.heroImage}
+          />
+        </div>
       </div>
     </section>
   );
