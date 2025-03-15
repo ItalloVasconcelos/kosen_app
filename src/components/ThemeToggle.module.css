@@ -1,0 +1,21 @@
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--kosen-dark);
+  transition: color 0.3s ease;
+  margin-left: 1rem;
+}
+
+.themeToggle:hover {
+  color: var(--kosen-primary);
+}
+
+:global(.dark) .themeToggle {
+  color: var(--kosen-light);
+}

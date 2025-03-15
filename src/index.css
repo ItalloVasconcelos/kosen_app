@@ -9,6 +9,26 @@
   --kosen-dark: #111827;
   --kosen-muted: #4B5563;
   --kosen-border: #E5E7EB;
+  --kosen-background: #FFFFFF;
+  --kosen-card-bg: #FFFFFF;
+  --kosen-text: #111827;
+  --kosen-text-secondary: #4B5563;
+  --kosen-divider: #333333;
+}
+
+.dark {
+  --kosen-primary: #9b87f5;
+  --kosen-secondary: #7E69AB;
+  --kosen-tertiary: #6E59A5;
+  --kosen-light: #C8C8C9;
+  --kosen-dark: #FFFFFF;
+  --kosen-muted: #9F9EA1;
+  --kosen-border: #403E43;
+  --kosen-background: #1A1F2C;
+  --kosen-card-bg: #221F26;
+  --kosen-text: #FFFFFF;
+  --kosen-text-secondary: #C8C8C9;
+  --kosen-divider: #8A898C;
 }
 
 * {
@@ -23,8 +43,9 @@ html {
 
 body {
   font-family: 'Work Sans', sans-serif;
-  background-color: var(--kosen-light);
-  color: var(--kosen-dark);
+  background-color: var(--kosen-background);
+  color: var(--kosen-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Animation utilities */

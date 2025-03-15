@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
+import { ArrowRight } from "lucide-react";
 import styles from "./ContactSection.module.css";
 
 const ContactSection = () => {
@@ -45,10 +46,12 @@ const ContactSection = () => {
           <div className={styles.buttonContainer}>
             <a href="#" className={styles.primaryButton}>
               {t.nextSteps.buyButton}
+              <ArrowRight size={16} className={styles.buttonIcon} />
             </a>
             
             <a href="#" className={styles.secondaryButton}>
               {t.nextSteps.tryButton}
+              <ArrowRight size={16} className={styles.buttonIcon} />
             </a>
           </div>
         </div>
@@ -58,6 +61,8 @@ const ContactSection = () => {
           <h2 className={styles.formHeading}>
             Entre em contato
           </h2>
+          
+          <p className={styles.formSubheading}>Get in touch</p>
           
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.formGroup}>
@@ -129,6 +134,7 @@ const ContactSection = () => {
               className={styles.formButton}
             >
               Entre em contato
+              <ArrowRight size={16} className={styles.buttonIcon} />
             </button>
           </form>
         </div>

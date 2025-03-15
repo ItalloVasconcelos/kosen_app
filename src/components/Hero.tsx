@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
+import { ArrowRight } from "lucide-react";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
@@ -25,10 +26,12 @@ const Hero = () => {
           <div className={styles.buttonContainer}>
             <a href="#contact" className={styles.primaryButton}>
               {t.hero.buyButton}
+              <ArrowRight size={16} className={styles.buttonIcon} />
             </a>
             
             <a href="#resources" className={styles.secondaryButton}>
               {t.hero.tryButton}
+              <ArrowRight size={16} className={styles.buttonIcon} />
             </a>
           </div>
         </div>

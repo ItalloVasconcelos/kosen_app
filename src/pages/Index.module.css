@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   font-family: 'Work Sans', sans-serif;
+  position: relative;
 }
 
 .section {
@@ -12,8 +13,16 @@
 
 .divider {
   height: 1px;
-  background-color: #333;
+  background-color: var(--kosen-divider);
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.themeToggleContainer {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
 }

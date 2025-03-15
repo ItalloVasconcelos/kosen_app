@@ -32,6 +32,12 @@ const Resources = () => {
         Recursos
       </h2>
       
+      <p className={styles.description}>
+        Brief description of how the Kosen app can help companies.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non elit non lacus consectetur egestas eget eu mauris. Suspendisse potenti. 
+        Etiam eget accumsan tellus, sed eleifend augue.
+      </p>
+      
       <div className={styles.resourcesContainer}>
         <ResourceCard
           title="Recurso #01 (Adicione título)"

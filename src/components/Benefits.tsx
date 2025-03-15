@@ -6,25 +6,21 @@ import styles from "./Benefits.module.css";
 const BenefitCard = ({ 
   title, 
   description, 
-  color
+  imageSrc
 }: { 
   title: string; 
   description: string; 
-  color: "primary" | "secondary" | "tertiary";
+  imageSrc: string;
 }) => {
-  const getColorClass = () => {
-    switch (color) {
-      case "primary": return styles.cardPrimary;
-      case "secondary": return styles.cardSecondary;
-      case "tertiary": return styles.cardTertiary;
-      default: return styles.cardPrimary;
-    }
-  };
-
   return (
-    <div className={`${styles.card} ${getColorClass()}`}>
-      <h3 className={styles.cardTitle}>{title}</h3>
-      <p className={styles.cardDescription}>{description}</p>
+    <div className={styles.card}>
+      <div className={styles.cardImageContainer}>
+        <img src={imageSrc} alt={title} className={styles.cardImage} />
+      </div>
+      <div className={styles.cardContent}>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p className={styles.cardDescription}>{description}</p>
+      </div>
     </div>
   );
 };
@@ -42,17 +38,17 @@ const Benefits = () => {
         <BenefitCard
           title="Benefício #01 (Adicione título)"
           description="Descrição do benefício #01 (Adicione Descrição)."
-          color="primary"
+          imageSrc="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&auto=format&fit=crop"
         />
         <BenefitCard
           title="Benefício #02 (Adicione título)"
           description="Descrição do benefício #02 (Adicione Descrição)."
-          color="secondary"
+          imageSrc="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&auto=format&fit=crop"
         />
         <BenefitCard
           title="Benefício #03 (Adicione título)"
           description="Descrição do benefício #03 (Adicione Descrição)."
-          color="tertiary"
+          imageSrc="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&auto=format&fit=crop"
         />
       </div>
     </section>

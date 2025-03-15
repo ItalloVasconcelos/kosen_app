@@ -1,7 +1,8 @@
 
 .section {
   padding: 2rem;
-  background-color: #F8F9FC;
+  background-color: var(--kosen-background);
+  transition: background-color 0.3s ease;
 }
 
 .container {
@@ -22,14 +23,16 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #111827;
+  color: var(--kosen-text);
+  transition: color 0.3s ease;
 }
 
 .description {
-  color: #4B5563;
+  color: var(--kosen-text-secondary);
   margin-bottom: 2rem;
   font-size: 1rem;
   line-height: 1.5;
+  transition: color 0.3s ease;
 }
 
 .buttonContainer {
@@ -42,7 +45,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background-color: #4318D1;
+  background-color: var(--kosen-primary);
   color: white;
   border-radius: 0.25rem;
   font-weight: 500;
@@ -54,17 +57,21 @@
   background-color: #35149b;
 }
 
+.buttonIcon {
+  margin-left: 0.5rem;
+}
+
 .secondaryButton {
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background-color: white;
-  color: #4318D1;
-  border: 1px solid #4318D1;
+  background-color: var(--kosen-card-bg);
+  color: var(--kosen-primary);
+  border: 1px solid var(--kosen-primary);
   border-radius: 0.25rem;
   font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .secondaryButton:hover {
@@ -72,16 +79,26 @@
 }
 
 .rightColumn {
-  background-color: white;
+  background-color: var(--kosen-card-bg);
   padding: 2rem;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .formHeading {
   font-size: 1.25rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--kosen-text);
+  transition: color 0.3s ease;
+}
+
+.formSubheading {
+  font-size: 0.875rem;
+  color: var(--kosen-text-secondary);
   margin-bottom: 1.5rem;
-  color: #111827;
+  transition: color 0.3s ease;
 }
 
 .form {
@@ -101,39 +118,42 @@
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #111827;
+  color: var(--kosen-text);
+  transition: color 0.3s ease;
 }
 
 .formInput {
   width: 100%;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--kosen-border);
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   transition: all 0.3s ease;
-  background-color: white;
+  background-color: var(--kosen-card-bg);
+  color: var(--kosen-text);
   font-size: 0.875rem;
 }
 
 .formInput:focus {
   outline: none;
-  border-color: #4318D1;
+  border-color: var(--kosen-primary);
   box-shadow: 0 0 0 2px rgba(67, 24, 209, 0.1);
 }
 
 .formTextarea {
   width: 100%;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--kosen-border);
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   resize: none;
   transition: all 0.3s ease;
-  background-color: white;
+  background-color: var(--kosen-card-bg);
+  color: var(--kosen-text);
   font-size: 0.875rem;
 }
 
 .formTextarea:focus {
   outline: none;
-  border-color: #4318D1;
+  border-color: var(--kosen-primary);
   box-shadow: 0 0 0 2px rgba(67, 24, 209, 0.1);
 }
 
@@ -142,12 +162,16 @@
   right: 0.5rem;
   bottom: 0.5rem;
   font-size: 0.75rem;
-  color: #6B7280;
+  color: var(--kosen-text-secondary);
+  transition: color 0.3s ease;
 }
 
 .formButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  background-color: #4318D1;
+  background-color: var(--kosen-primary);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 0.25rem;
