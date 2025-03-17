@@ -43,7 +43,7 @@ const Navbar = () => {
           <div className={styles.logo}>
             <div className={styles.logoBox}>
                 <img
-                    src={theme === "dark" ? "/images/logo_kosen_dark.svg" : "/images/logo_kosen_light.svg"}
+                    src={theme === "dark" ? "/images/logo_kosen_light.svg" : "/images/logo_kosen_dark.svg"}
                     width={"150"}
                     alt="Kosen Energy Platform"
                     className={styles.heroImage}

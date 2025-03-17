@@ -98,8 +98,9 @@ const Footer = () => {
           <div className={styles.legalLinks}>
             <a href="#termos" className={styles.legalLink}>{t.footer.termsOfUse}</a>
             <a href="#privacidade" className={styles.legalLink}>{t.footer.privacyPolicy}</a>
-          </div> */}
-        </div>
+          </div>
+           </div> */}
+
       </div>
     </footer>
   );
