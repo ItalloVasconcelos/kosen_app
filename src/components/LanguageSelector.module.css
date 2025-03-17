@@ -18,7 +18,7 @@
   font-size: 0.875rem;
   cursor: pointer;
   border-radius: 4px;
-  color: var(--kosen-dark);
+  color: var(--kosen-text);
   font-weight: 500;
   transition: all 0.2s ease;
 }

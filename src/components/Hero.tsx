@@ -15,7 +15,7 @@ const Hero = () => {
         <div className={styles.content}>
           <div className={styles.logo}>
               <img
-                  src={theme === "dark" ? "/images/logo_kosen_energy_dark.svg" : "/images/logo_kosen_energy.svg"}
+                  src={theme === "dark" ? "/images/logo_kosen_energy_dark.svg" : "/images/logo_kosen_energy_light.svg"}
                   alt="Kosen Energy Logo"
                   className={styles.heroLogo}
               />
@@ -37,14 +37,15 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        
+
         <div className={styles.imageContainer}>
-          <img 
-            src="/images/energy-illustration.png" 
-            alt="Energy Illustration" 
-            className={styles.heroImage}
-          />
-        </div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop" 
+                        alt="Energy Solutions" 
+                        className={styles.aboutImage}
+                    />
+                </div>
+       
       </div>
     </section>
   );

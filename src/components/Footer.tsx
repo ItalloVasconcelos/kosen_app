@@ -27,7 +27,7 @@ const Footer = () => {
             <div className={styles.logoBox}>
                 <img
                     width={"500"}
-                    src={theme === "dark" ? "/images/logo_kosen_white.svg" : "/images/logo_kosen.svg"}
+                    src={"/images/logo_kosen_light.svg"}
                     alt="Kosen Energy Platform"
                     className={styles.heroImage}
                 />
@@ -93,12 +93,12 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className={styles.bottomSection}>
+        {/* <div className={styles.bottomSection}>
           <div>{t.footer.copyright}</div>
           <div className={styles.legalLinks}>
             <a href="#termos" className={styles.legalLink}>{t.footer.termsOfUse}</a>
             <a href="#privacidade" className={styles.legalLink}>{t.footer.privacyPolicy}</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

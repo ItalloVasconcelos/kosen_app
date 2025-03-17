@@ -18,13 +18,7 @@ const AboutUs = () => {
                     </p>
                 </div>
                 
-                <div className={styles.imageContainer}>
-                    <img 
-                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop" 
-                        alt="Energy Solutions" 
-                        className={styles.aboutImage}
-                    />
-                </div>
+                
             </div>
         </section>
     );
