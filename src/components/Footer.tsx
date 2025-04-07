@@ -1,4 +1,4 @@
-
+import React from "react";
 import { 
   Linkedin, 
   Instagram, 
@@ -12,7 +12,6 @@ import {
 import { useTranslation } from "@/lib/i18n/TranslationContext";
 import { useTheme } from "./ThemeProvider";
 import styles from "./Footer.module.css";
-import React from "react";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -27,7 +26,7 @@ const Footer = () => {
             <div className={styles.logoBox}>
                 <img
                     width={200}
-                    src={theme === "dark" ? "/images/logo_kosen_light.svg" : "/images/logo_kosen_dark.svg"}
+                    src={"/images/logo_kosen_light.svg"}
                     alt="Kosen Energy Platform"
                     className={styles.heroImage}
                 />
@@ -92,14 +91,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
-        {/* <div className={styles.bottomSection}>
-          <div>{t.footer.copyright}</div>
-          <div className={styles.legalLinks}>
-            <a href="#termos" className={styles.legalLink}>{t.footer.termsOfUse}</a>
-            <a href="#privacidade" className={styles.legalLink}>{t.footer.privacyPolicy}</a>
-          </div>
-        </div> */}
       </div>
     </footer>
   );
