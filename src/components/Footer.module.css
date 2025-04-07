@@ -1,7 +1,8 @@
 
 .footer {
-  background-color: var(--kosen-dark);
+  background-color: #2B2B2B;
   color: var(--kosen-light);
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .container {
@@ -72,7 +73,7 @@
 .contactLink {
   color: var(--kosen-secondary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--transition-speed) ease;
 }
 
 .contactLink:hover {
@@ -98,7 +99,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   padding: 0.5rem;
   border-radius: 9999px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
 }
 
 .socialLink:hover {
@@ -133,11 +134,15 @@
 .legalLink {
   color: var(--kosen-light);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--transition-speed) ease;
 }
 
 .legalLink:hover {
   color: white;
+}
+
+.heroImage {
+  transition: opacity var(--transition-speed) ease;
 }
 
 @media (max-width: 768px) {

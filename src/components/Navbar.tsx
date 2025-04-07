@@ -47,6 +47,7 @@ const Navbar = () => {
                     width={"150"}
                     alt="Kosen Energy Platform"
                     className={styles.heroImage}
+                    loading="eager"
                 />
             </div>
           </div>

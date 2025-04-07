@@ -23,11 +23,14 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   });
 
   useEffect(() => {
+    // Apply theme immediately to prevent flickering
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
+    
+    // Save theme preference
     localStorage.setItem("theme", theme);
   }, [theme]);
 

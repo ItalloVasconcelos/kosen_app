@@ -15,6 +15,7 @@
   --kosen-text: #111827;
   --kosen-text-secondary: #4B5563;
   --kosen-divider: #E5E7EB;
+  --transition-speed: 0.2s;
 }
 
 .dark {
@@ -25,9 +26,9 @@
   --kosen-dark: #1A1F2C;
   --kosen-muted: #9F9EA1;
   --kosen-border: #403E43;
-  --kosen-background: #1A1F2C;
-  --kosen-background-rgb: 26, 31, 44;
-  --kosen-card-bg: #221F26;
+  --kosen-background: #2B2B2B;
+  --kosen-background-rgb: 43, 43, 43;
+  --kosen-card-bg: #353535;
   --kosen-text: #F8F9FC;
   --kosen-text-secondary: #C8C8C9;
   --kosen-divider: #403E43;
@@ -47,7 +48,7 @@ body {
   font-family: 'Work Sans', sans-serif;
   background-color: var(--kosen-background);
   color: var(--kosen-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 /* Animation utilities */
